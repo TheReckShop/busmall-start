@@ -1,0 +1,27 @@
+/* Intro Section*/
+
+header {
+  text-align: center;
+  font-family: sans-serif, arial;
+}
+
+section>p {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: .85em;
+}
+
+section>h2 {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.image {
+  display: inline;
+  min-width: 200px;
+  max-width: 300px;
+  min-height: 200px;
+  max-height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
