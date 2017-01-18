@@ -45,11 +45,12 @@ function randNum() {
 
 function uploadImg() {
   var leftIndex = randNum();
+  console.log('start');
   var leftProduct = choicesMade[leftIndex];
   left.src = leftProduct.imageFilePath;
   left.alt = leftProduct.productName;
   leftProduct.timesShown += 1;
-
+  leftProduct.timesClicked += 1;
   var centerIndex = randNum();
   while (centerIndex === leftIndex) {
     centerIndex = randNum();
@@ -59,7 +60,7 @@ function uploadImg() {
   center.src = centerProduct.imageFilePath;
   center.alt = centerProduct.productName;
   centerProduct.timesShown += 1;
-
+  centerProduct.timesClicked += 1;
   var rightIndex = randNum();
   while (rightIndex === leftIndex || rightIndex === centerIndex) {
     rightIndex = randNum();
@@ -69,8 +70,10 @@ function uploadImg() {
   right.src = rightProduct.imageFilePath;
   right.alt = rightProduct.productName;
   rightProduct.timesShown += 1;
+  rightProduct.timesClicked += 1;
 
   var previouslyShown = [rightIndex, leftIndex, centerIndex];
+  console.log(previouslyShown);
   // while (previouslyShown[0] === previouslyShown[1] || previouslyShown[0] === previouslyShown[2]) {
   //   previouslyShown[0] = randNum();
   //   break;
@@ -79,6 +82,13 @@ function uploadImg() {
   //   previouslyShown[1] = randNum();
   //   break;
   // }
+  console.log(leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked);
+
+  while (leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked === 25) {
+    // var text = document.getElementById('totals').textContent;
+    // document.getElementById('totals').textContent = 'This is some text'
+    break;
+  }
 };
 uploadImg();
 var imgElLeft = document.getElementById('left');
