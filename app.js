@@ -49,7 +49,6 @@ function uploadImg() {
   left.src = leftProduct.imageFilePath;
   left.alt = leftProduct.productName;
   leftProduct.timesShown += 1;
-  leftProduct.timesClicked += 1;
 
   var centerIndex = randNum();
   while (centerIndex === leftIndex) {
@@ -60,7 +59,6 @@ function uploadImg() {
   center.src = centerProduct.imageFilePath;
   center.alt = centerProduct.productName;
   centerProduct.timesShown += 1;
-  centerProduct.timesClicked += 1;
 
   var rightIndex = randNum();
   while (rightIndex === leftIndex || rightIndex === centerIndex) {
@@ -71,35 +69,18 @@ function uploadImg() {
   right.src = rightProduct.imageFilePath;
   right.alt = rightProduct.productName;
   rightProduct.timesShown += 1;
-  rightProduct.timesClicked += 1;
 
-  var previouslyShown = [leftIndex, centerIndex, rightIndex];
-  while (previouslyShown[0] === previouslyShown[2] || previouslyShown[0] === previouslyShown[1]) {
-    previouslyShown[0,1] = randNum();
-  }
-  while (previouslyShown[1] === previouslyShown[2] || previouslyShown[0] === previouslyShown[1]) {
-    previouslyShown[2] = randNum();
-  }
-  while (leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked === 25) {
-    var text = document.getElementById('totals').textContent;
-    document.getElementById('totals').textContent = 'This is some text';
-
-    console.log('test');
-  }
-
+  var previouslyShown = [rightIndex, leftIndex, centerIndex];
+  // while (previouslyShown[0] === previouslyShown[1] || previouslyShown[0] === previouslyShown[2]) {
+  //   previouslyShown[0] = randNum();
+  //   break;
+  // }
+  // while (previouslyShown[1] === previouslyShown[2]) {
+  //   previouslyShown[1] = randNum();
+  //   break;
+  // }
 };
 uploadImg();
-
-function totals() {
-  var leftIndex = randNum();
-  var rightIndex = randNum();
-  var centerIndex = randNum();
-  var leftProduct = choicesMade[leftIndex];
-  var rightProduct = choicesMade[rightIndex];
-  var centerProduct = choicesMade[centerIndex];
-};
-totals();
-
 var imgElLeft = document.getElementById('left');
 var imgElCenter = document.getElementById('center');
 var imgElRight = document.getElementById('right');
