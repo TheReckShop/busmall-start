@@ -1,4 +1,17 @@
+/* Intro Section*/
+
 header {
   text-align: center;
   font-family: sans-serif, arial;
+}
+
+section>p {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: .85em;
+}
+
+section>h2 {
+  font-family: sans-serif;
+  text-align: center;
 }
