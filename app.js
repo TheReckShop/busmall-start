@@ -5,7 +5,7 @@ var pic1 = document.createElement('pic-1');
 var pic2 = document.createElement('pic-2');
 var pic3 = document.createElement('pic-3');
 var productName = ['bag', 'bananna', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
-var imageFilePath = ['img/bag.jpg', 'img/bananna.jpg', 'img/bathroom.jpg', 'img/boots.jpg', 'img/breakfast.jpg', 'img/bubblegum.jpg', 'img/chair.jpg', 'img/cthulhu.jpg', 'img/dog-duck.jpg', 'img/dragon.jpg', 'img/pen.jpg', 'img/pet-sweep.jpg', 'img/scissors.jpg', 'img/shark.jpg', 'img/sweep.png', 'img/tauntaun.jpg', 'img/unicorn.jpg', 'img/usb.gif', 'img/water-can.jpg', 'img/imgwine-glass.jpg'];
+var imageFilePath = ['img/bag.jpg', 'img/banana.jpg', 'img/bathroom.jpg', 'img/boots.jpg', 'img/breakfast.jpg', 'img/bubblegum.jpg', 'img/chair.jpg', 'img/cthulhu.jpg', 'img/dog-duck.jpg', 'img/dragon.jpg', 'img/pen.jpg', 'img/pet-sweep.jpg', 'img/scissors.jpg', 'img/shark.jpg', 'img/sweep.png', 'img/tauntaun.jpg', 'img/unicorn.jpg', 'img/usb.gif', 'img/water-can.jpg', 'img/wine-glass.jpg'];
 
 function ImageConstructor(imageName, imageFilePath, timesShown, timesClicked) {
   this.imageName = imageName;
@@ -36,3 +36,41 @@ var waterCan = new ImageConstructor(productName[18], imageFilePath[18], 0, 0);
 var wineGlass = new ImageConstructor(productName[19], imageFilePath[19], 0, 0);
 
 var choicesMade = [bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dogDuck, dragon, pen, petSweep, scissors, shark, sweep, tauntaun, unicorn, usb, waterCan, wineGlass];
+
+function randNum() {
+  var min = 0;
+  var max = 19;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+function uploadImg() {
+  var leftIndex = randNum();
+  var leftProduct = choicesMade[leftIndex];
+  left.src = leftProduct.imageFilePath;
+  left.alt = leftProduct.productName;
+  leftProduct.timesShown += 1;
+
+  var centerIndex = randNum();
+  while (centerIndex === leftIndex) {
+    centerIndex = randNum();
+  }
+
+  var centerProduct = choicesMade[centerIndex];
+  center.src = centerProduct.imageFilePath;
+  center.alt = centerProduct.productName;
+  centerProduct.views += 1;
+
+  var rightIndex = randNum();
+  while (rightIndex === leftIndex || rightIndex === centerIndex) {
+    rightIndex = randNum();
+  }
+
+  var rightProduct = choicesMade[rightIndex];
+  right.src = rightProduct.imageFilePath;
+  right.alt = rightProduct.productName;
+  rightProduct.views += 1;
+
+  var previouslyShown = [leftIndex, centerIndex, rightIndex];
+};
+
+uploadImg();
