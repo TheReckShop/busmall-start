@@ -1,19 +1,16 @@
 'use strict';
 
-var choicesMade = [];
 var productDisplay = document.createElement('product-display');
 var pic1 = document.createElement('pic-1');
 var pic2 = document.createElement('pic-2');
 var pic3 = document.createElement('pic-3');
 var productName = ['bag', 'bananna', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
 var imageFilePath = ['img/bag.jpg', 'img/bananna.jpg', 'img/bathroom.jpg', 'img/boots.jpg', 'img/breakfast.jpg', 'img/bubblegum.jpg', 'img/chair.jpg', 'img/cthulhu.jpg', 'img/dog-duck.jpg', 'img/dragon.jpg', 'img/pen.jpg', 'img/pet-sweep.jpg', 'img/scissors.jpg', 'img/shark.jpg', 'img/sweep.png', 'img/tauntaun.jpg', 'img/unicorn.jpg', 'img/usb.gif', 'img/water-can.jpg', 'img/imgwine-glass.jpg'];
-var timesShown = 0;
-var timesClicked = 0;
 
 function ImageConstructor(imageName, imageFilePath, timesShown, timesClicked) {
   this.imageName = imageName;
   this.imageFilePath = imageFilePath;
-  this.timesShown = timeShown;
+  this.timesShown = timesShown;
   this.timesClicked = timesClicked;
 };
 
@@ -37,3 +34,5 @@ var unicorn = new ImageConstructor(productName[16], imageFilePath[16], 0, 0);
 var usb = new ImageConstructor(productName[17], imageFilePath[17], 0, 0);
 var waterCan = new ImageConstructor(productName[18], imageFilePath[18], 0, 0);
 var wineGlass = new ImageConstructor(productName[19], imageFilePath[19], 0, 0);
+
+var choicesMade = [bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dogDuck, dragon, pen, petSweep, scissors, shark, sweep, tauntaun, unicorn, usb, waterCan, wineGlass];
