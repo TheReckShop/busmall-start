@@ -37,11 +37,15 @@ var wineGlass = new ImageConstructor(productName[19], imageFilePath[19], 0, 0);
 
 var choicesMade = [bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dogDuck, dragon, pen, petSweep, scissors, shark, sweep, tauntaun, unicorn, usb, waterCan, wineGlass];
 
+
 function randNum() {
   var min = 0;
   var max = 19;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+function sum(a, b, c) {
+  return a + b + c;
+}
 
 function uploadImg() {
   var leftIndex = randNum();
@@ -51,6 +55,8 @@ function uploadImg() {
   left.alt = leftProduct.productName;
   leftProduct.timesShown += 1;
   leftProduct.timesClicked += 1;
+  // return leftProduct.timesClicked;
+
   var centerIndex = randNum();
   while (centerIndex === leftIndex) {
     centerIndex = randNum();
@@ -61,6 +67,7 @@ function uploadImg() {
   center.alt = centerProduct.productName;
   centerProduct.timesShown += 1;
   centerProduct.timesClicked += 1;
+  // return centerProduct.timesClicked;
   var rightIndex = randNum();
   while (rightIndex === leftIndex || rightIndex === centerIndex) {
     rightIndex = randNum();
@@ -71,29 +78,53 @@ function uploadImg() {
   right.alt = rightProduct.productName;
   rightProduct.timesShown += 1;
   rightProduct.timesClicked += 1;
+  // return rightProduct.timesClicked;
 
   var previouslyShown = [rightIndex, leftIndex, centerIndex];
-  console.log(previouslyShown);
+  // var previouslyShownSum = sum(previouslyShown[0],previouslyShown[1],previouslyShown[2]);
+  console.log('ps' + previouslyShown);
+  // console.log(previouslyShownSum);
+  var clicksMade = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked, bubblegum.timesClicked, chair.timesClicked, cthulhu.timesClicked, dogDuck.timesClicked, dragon.timesClicked, pen.timesClicked, petSweep.timesClicked, scissors.timesClicked, shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked, usb.timesClicked, waterCan.timesClicked, wineGlass.timesClicked];
+  console.log(clicksMade);
+
   // while (previouslyShown[0] === previouslyShown[1] || previouslyShown[0] === previouslyShown[2]) {
   //   previouslyShown[0] = randNum();
-  //   break;
   // }
   // while (previouslyShown[1] === previouslyShown[2]) {
   //   previouslyShown[1] = randNum();
-  //   break;
   // }
-  console.log(leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked);
+  // var clicks = sum(leftProduct.timesClicked, rightProduct.timesClicked, centerProduct.timesClicked);
+  // console.log('clicks' + clicks);
 
-  while (leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked === 25) {
-    // var text = document.getElementById('totals').textContent;
-    // document.getElementById('totals').textContent = 'This is some text'
-    break;
-  }
+  // while (leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked === 25) {
+  //   // var text = document.getElementById('totals').textContent;
+  //   // document.getElementById('totals').textContent = 'This is some text'
+  //   break;
+  //   function clickAmounts() {
+  //     var sliceClicks = choicesMade.bag.timesClicked;
+  //     console.log('slice' + sliceClicks);
+  //   };
+    // clickAmounts();
+  // }
 };
 uploadImg();
+
+// leftProduct.timesClicked += 1;
+
+// choicesMade.forEach()
+
+// function clickAmounts() {
+//   var sliceClicks = choicesMade.bag.timesClicked;
+//   console.log('slice' + sliceClicks);
+// };
+// clickAmounts();
 var imgElLeft = document.getElementById('left');
 var imgElCenter = document.getElementById('center');
 var imgElRight = document.getElementById('right');
+var imgElAll = document.getElementById('left', 'center', 'right');
 imgElLeft.addEventListener('click', uploadImg, false);
 imgElRight.addEventListener('click', uploadImg, false);
 imgElCenter.addEventListener('click', uploadImg, false);
+// imgElAll.addEventListener('click', clickAmounts, false);
+
+// function han
