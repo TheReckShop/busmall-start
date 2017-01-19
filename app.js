@@ -42,127 +42,17 @@ function randNum() {
   var max = 19;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-function sum(a, b, c) {
-  return a + b + c;
-}
 
-function uploadImgLeft() {
+function uploadImg() {
   var leftIndex = randNum();
-  // return leftIndex;
+  console.log('start');
   var leftProduct = choicesMade[leftIndex];
   left.src = leftProduct.imageFilePath;
   left.alt = leftProduct.productName;
   leftProduct.timesShown += 1;
   leftProduct.timesClicked += 1;
-  var leftClicked = leftIndex.valueOf();
-
   var centerIndex = randNum();
-
-  var centerProduct = choicesMade[centerIndex];
-  center.src = centerProduct.imageFilePath;
-  center.alt = centerProduct.productName;
-  // centerProduct.timesShown += 1;
-  // centerProduct.timesClicked += 1;
-  var centerClicked = centerIndex.valueOf();
-  // console.log(centerClicked);
-  return centerProduct.timesClicked;
-  var rightIndex = randNum();
-  // return rightIndex;
-
-  while (rightProduct === centerProduct) {
-    rightIndex = randNum();
-  }
-
-  var rightProduct = choicesMade[rightIndex];
-  right.src = rightProduct.imageFilePath;
-  right.alt = rightProduct.productName;
-  // rightProduct.timesShown += 1;
-  // rightProduct.timesClicked += 1;
-  var rightClicked = rightIndex.valueOf();
-  var previouslyShown = [leftClicked, rightClicked, centerClicked];
-
-  while (rightProduct === leftProduct || centerProduct === leftProduct ) {
-    leftIndex = randNum();
-  }
-  while (rightProduct === centerProduct) {
-    rightIndex = randNum();
-    console.log('PS Compare:' + leftClicked, rightClicked, centerClicked);
-    // break;
-  }
-
-  console.log('PSprevs' + previouslyShown);
-  while (leftClicked + rightClicked + centerClicked > 10) {
-    document.write('You\'re done');
-  };
-  // while (rightProduct.timesClicked + centerProduct.timesClicked + rightProduct.timesClicked > 10) {
-  //   console.log('it works');
-  //   break;
-
-  var clicksMade = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked, bubblegum.timesClicked, chair.timesClicked, cthulhu.timesClicked, dogDuck.timesClicked, dragon.timesClicked, pen.timesClicked, petSweep.timesClicked, scissors.timesClicked, shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked, usb.timesClicked, waterCan.timesClicked, wineGlass.timesClicked];
-  console.log(clicksMade);
-};
-function uploadImgRight() {
-  var leftIndex = randNum();
-  var leftProduct = choicesMade[leftIndex];
-  left.src = leftProduct.imageFilePath;
-  left.alt = leftProduct.productName;
-  // leftProduct.timesShown += 1;
-  // leftProduct.timesClicked += 1;
-  var leftClicked = leftIndex.valueOf();
-
-  var centerIndex = randNum();
-  while (leftIndex === centerIndex){
-    leftIndex = randNum();
-  }
-
-  var centerProduct = choicesMade[centerIndex];
-  center.src = centerProduct.imageFilePath;
-  center.alt = centerProduct.productName;
-  // centerProduct.timesShown += 1;
-  // centerProduct.timesClicked += 1;
-  var centerClicked = centerIndex.valueOf();
-  console.log(centerClicked);
-
-  var rightIndex = randNum();
-
-  var rightProduct = choicesMade[rightIndex];
-  right.src = rightProduct.imageFilePath;
-  right.alt = rightProduct.productName;
-  // rightProduct.timesShown += 1;
-  // rightProduct.timesClicked += 1;
-  var rightClicked = rightIndex.valueOf();
-  var previouslyShown = [leftClicked, rightClicked, centerClicked];
-
-  while (rightProduct === leftProduct || rightProduct === centerProduct) {
-    rightIndex = randNum();
-    console.log('PS Compare:' + leftClicked, rightClicked, centerClicked);
-  }
-  while (centerProduct === leftProduct) {
-    leftIndex = randNum();
-    console.log('PS2 Compare:' + leftIndex, rightIndex, centerIndex);
-  }
-
-  // while (rightProduct.timesClicked + centerProduct.timesClicked + rightProduct.timesClicked > 10) {
-  //   console.log('it works');
-  //   break;
-  // };
-  var clicksMade = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked, bubblegum.timesClicked, chair.timesClicked, cthulhu.timesClicked, dogDuck.timesClicked, dragon.timesClicked, pen.timesClicked, petSweep.timesClicked, scissors.timesClicked, shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked, usb.timesClicked, waterCan.timesClicked, wineGlass.timesClicked];
-  console.log(clicksMade);
-
-};
-
-function uploadImgCenter() {
-  var leftIndex = randNum();
-
-  var leftProduct = choicesMade[leftIndex];
-  left.src = leftProduct.imageFilePath;
-  left.alt = leftProduct.productName;
-  // leftProduct.timesShown += 1;
-  // leftProduct.timesClicked += 1;
-  var leftClicked = leftIndex.valueOf();
-
-  var centerIndex = randNum();
-  while (centerIndex === leftIndex || centerIndex === rightIndex) {
+  while (centerIndex === leftIndex) {
     centerIndex = randNum();
   }
 
@@ -171,77 +61,39 @@ function uploadImgCenter() {
   center.alt = centerProduct.productName;
   centerProduct.timesShown += 1;
   centerProduct.timesClicked += 1;
-  var centerClicked = centerIndex.valueOf();
-  // console.log(centerClicked);
-  // return centerProduct.timesClicked;
   var rightIndex = randNum();
-  // return rightIndex;
-
-  while (rightIndex === leftIndex) {
+  while (rightIndex === leftIndex || rightIndex === centerIndex) {
     rightIndex = randNum();
   }
 
   var rightProduct = choicesMade[rightIndex];
   right.src = rightProduct.imageFilePath;
   right.alt = rightProduct.productName;
-  // rightProduct.timesShown += 1;
-  // rightProduct.timesClicked += 1;
-  var rightClicked = rightIndex.valueOf();
-  var previouslyShown = [leftClicked, rightClicked, centerClicked];
+  rightProduct.timesShown += 1;
+  rightProduct.timesClicked += 1;
 
-  while (rightProduct === centerProduct || rightProduct === leftProduct ) {
+  var previouslyShown = [rightIndex, leftIndex, centerIndex];
+  console.log(previouslyShown);
+  while (previouslyShown[0] === previouslyShown[1] || previouslyShown[0] === previouslyShown[2]) {
+    leftIndex = randNum();
+    break;
+  }
+  while (previouslyShown[1] === previouslyShown[2]) {
     rightIndex = randNum();
-    console.log('PS Compare:' + leftClicked, rightClicked, centerClicked);
-    // break;
+    break;
+  }
+  // console.log(leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked);
 
-    console.log('PSprevs' + previouslyShown);
-    // while (leftClicked + rightClicked + centerClicked < 5) {
-    //   document.write('You\'re done');
-    // };
-    // while (rightProduct.timesClicked + centerProduct.timesClicked + rightProduct.timesClicked > 5) {
-    //   console.log('it works');
-    //   break;
-    // };
-    var clicksMade = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked, bubblegum.timesClicked, chair.timesClicked, cthulhu.timesClicked, dogDuck.timesClicked, dragon.timesClicked, pen.timesClicked, petSweep.timesClicked, scissors.timesClicked, shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked, usb.timesClicked, waterCan.timesClicked, wineGlass.timesClicked];
-    console.log(clicksMade);
-  };
+  while (leftProduct + rightProduct + centerProduct === 25) {
+    // var text = document.getElementById('totals').textContent;
+    // document.getElementById('totals').textContent = 'This is some text'
+    break;
+  }
 };
-
-  // var clicks = sum(leftProduct.timesClicked, rightProduct.timesClicked, centerProduct.timesClicked);
-  // console.log('clicks' + clicks)
-// function clickCount() {
-//   console.log('start');
-//   left.timesClicked += 1;
-//   left.timesShown += 1;
-//   console.log('LCL' + left.timesClicked.valueOf());
-//   center.timesClicked += 1;
-//   center.timesShown += 1;
-//   console.log('CENCL' + center.timesClicked.valueOf());
-//   right.timesClicked += 1;
-//   right.timesShown += 1;
-//   console.log('RCL' + right.timesClicked.valueOf());
-
-uploadImgLeft();
-uploadImgRight();
-uploadImgCenter();
-// clickCount();
-
-// leftProduct.timesClicked += 1;
-
-// choicesMade.forEach()
-
-// function clickAmounts() {
-//   var sliceClicks = choicesMade.bag.timesClicked;
-//   console.log('slice' + sliceClicks);
-// };
-// clickAmounts();
+uploadImg();
 var imgElLeft = document.getElementById('left');
 var imgElCenter = document.getElementById('center');
 var imgElRight = document.getElementById('right');
-var imgElAll = document.getElementById('left', 'center', 'right');
-imgElLeft.addEventListener('click', uploadImgLeft, false);
-imgElRight.addEventListener('click', uploadImgRight, false);
-imgElCenter.addEventListener('click', uploadImgCenter, false);
-// imgElRight.addEventListener('click', clickCount, false);
-
-// localStorage.whatevernameyouwant = anyvalue you want will create a never ending superglowbal object!
+imgElLeft.addEventListener('click', uploadImg, false);
+imgElRight.addEventListener('click', uploadImg, false);
+imgElCenter.addEventListener('click', uploadImg, false)
