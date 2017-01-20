@@ -106,10 +106,10 @@ function uploadImgLeft() {
     for (var i = 0; i < choicesMade.length; i++){
       var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
       var listSec = document.getElementById('final-list');
+      list.textContent = totalCLicksEach;
       var list = document.createElement('li');
-      list.textContent = totalClicksEach;
-      listSec.appendChild(list);
     }
+    listSec.appendChild(list);
     break;
   }
 };
@@ -161,11 +161,11 @@ function uploadImgCenter() {
     console.log(totalClicksEach);
     console.log('worked');
     var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
+    var listSec = document.getElementById('final-list');
     for (var i = 0; i < choicesMade.length; i++){
       var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
-      var listSec = document.getElementById('final-list');
       var list = document.createElement('li');
-      list.textContent = totalClicksEach;
+      list.textContent = totalClicksEach[i];
       listSec.appendChild(list);
     }
     break;
