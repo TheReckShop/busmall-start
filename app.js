@@ -6,7 +6,7 @@ var pic2 = document.createElement('pic-2');
 var pic3 = document.createElement('pic-3');
 var productName = ['bag', 'bananna', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
 var imageFilePath = ['img/bag.jpg', 'img/banana.jpg', 'img/bathroom.jpg', 'img/boots.jpg', 'img/breakfast.jpg', 'img/bubblegum.jpg', 'img/chair.jpg', 'img/cthulhu.jpg', 'img/dog-duck.jpg', 'img/dragon.jpg', 'img/pen.jpg', 'img/pet-sweep.jpg', 'img/scissors.jpg', 'img/shark.jpg', 'img/sweep.png', 'img/tauntaun.jpg', 'img/unicorn.jpg', 'img/usb.gif', 'img/water-can.jpg', 'img/wine-glass.jpg'];
-
+var listSec = document.getElementById('final-list');
 var leftProduct;
 var rightProduct;
 var centerProduct;
@@ -105,12 +105,14 @@ function uploadImgLeft() {
     console.log('worked');
     for (var i = 0; i < choicesMade.length; i++){
       var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
-      var listSec = document.getElementById('final-list');
-      list.textContent = totalCLicksEach;
       var list = document.createElement('li');
+      // var choices = choicesMade[i];
+      // console.log(choices);
+      var click = totalClicksEach[i];
+      var textData = click;
+      list.textContent = choicesMade[i].imageName + click;
+      listSec.appendChild(list);
     }
-    listSec.appendChild(list);
-    break;
   }
 };
 
@@ -161,11 +163,15 @@ function uploadImgCenter() {
     console.log(totalClicksEach);
     console.log('worked');
     var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
-    var listSec = document.getElementById('final-list');
+
     for (var i = 0; i < choicesMade.length; i++){
       var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
       var list = document.createElement('li');
-      list.textContent = totalClicksEach[i];
+      // var choices = choicesMade[i][i][i];
+      // console.log(choices);
+      var click = totalClicksEach[i];
+      var textData = click;
+      list.textContent = choicesMade[i].imageName + click;
       listSec.appendChild(list);
     }
     break;
@@ -223,9 +229,12 @@ function uploadImgRight() {
     console.log('worked');
     for (var i = 0; i < choicesMade.length; i++){
       var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
-      var listSec = document.getElementById('final-list');
       var list = document.createElement('li');
-      list.textContent = totalClicksEach;
+      // var choices = choicesMade[0];
+      // console.log(choices);
+      var click = totalClicksEach[i];
+      var textData = click;
+      list.textContent = choicesMade[i].imageName + click;
       listSec.appendChild(list);
     }
     break;
