@@ -16,7 +16,9 @@ function ImageConstructor(imageName, imageFilePath, timesShown, timesClicked) {
   this.timesShown = 0;
   this.timesClicked = 0;
 };
-
+function sum(a,b,c){
+  return a + b + c;
+}
 var bag = new ImageConstructor(productName[0], imageFilePath[0], 0, 0);
 var banana = new ImageConstructor(productName[1], imageFilePath[1], 0, 0);
 var bathroom = new ImageConstructor(productName[2], imageFilePath[2], 0, 0);
@@ -39,8 +41,6 @@ var waterCan = new ImageConstructor(productName[18], imageFilePath[18], 0, 0);
 var wineGlass = new ImageConstructor(productName[19], imageFilePath[19], 0, 0);
 
 var choicesMade = [bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dogDuck, dragon, pen, petSweep, scissors, shark, sweep, tauntaun, unicorn, usb, waterCan, wineGlass];
-
-
 // parseInt(totalClicks);
 
 function randNum() {
@@ -50,7 +50,7 @@ function randNum() {
 };
 
 function uploadImgLeft() {
-  var totalClicks = bag.timesClicked + banana.timesClicked + bathroom.timesClicked + boots.timesClicked + breakfast.timesClicked + bubblegum.timesClicked + chair.timesClicked + cthulhu.timesClicked + dogDuck.timesClicked + dragon.timesClicked + pen.timesClicked + petSweep.timesClicked + scissors.timesClicked + shark.timesClicked + sweep.timesClicked + tauntaun.timesClicked + unicorn.timesClicked + usb.timesClicked + waterCan.timesClicked + wineGlass.timesClicked;
+  var totalClicks = bag.timesClicked + banana.timesClicked + bathroom.timesClicked + boots.timesClicked + breakfast.timesClicked + bubblegum.timesClicked + chair.timesClicked + cthulhu.timesClicked + dogDuck.timesClicked + dragon.timesClicked + pen.timesClicked + petSweep.timesClicked + scissors.timesClicked + shark.timesClicked + sweep.timesClicked + tauntaun.timesClicked + unicorn.timesClicked + usb.timesClicked + waterCan.timesClicked + wineGlass.timesClicked - 2;
   console.log('TC: ' + totalClicks);
   console.log('TC: ' + totalClicks);
   var leftIndex = randNum();
@@ -95,7 +95,8 @@ function uploadImgLeft() {
   }
   console.log('timesClicked ' + leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked);
 
-  while (leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked === 5) {
+  var clickStop = sum(leftProduct.timesClicked.valueOf(), rightProduct.timesClicked.valueOf(), centerProduct.timesClicked.valueOf());
+  while (totalClicks === 5) {
     console.log('test');
     break;
     // var text = document.getElementById('totals').textContent;
@@ -104,6 +105,7 @@ function uploadImgLeft() {
 };
 
 function uploadImgCenter() {
+  var totalClicks = bag.timesClicked + banana.timesClicked + bathroom.timesClicked + boots.timesClicked + breakfast.timesClicked + bubblegum.timesClicked + chair.timesClicked + cthulhu.timesClicked + dogDuck.timesClicked + dragon.timesClicked + pen.timesClicked + petSweep.timesClicked + scissors.timesClicked + shark.timesClicked + sweep.timesClicked + tauntaun.timesClicked + unicorn.timesClicked + usb.timesClicked + waterCan.timesClicked + wineGlass.timesClicked - 2;
   var leftIndex = randNum();
   console.log('start');
   var leftProduct = choicesMade[leftIndex];
@@ -143,12 +145,14 @@ function uploadImgCenter() {
     break;
   }
   console.log('timesClicked ' + leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked);
-
-  while (leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked === 5) {
+  var clickStop = sum(leftProduct.timesClicked.valueOf(), rightProduct.timesClicked.valueOf(), centerProduct.timesClicked.valueOf());
+  while (totalClicks === 5) {
     console.log('test');
+    break;
   };
 };
 function uploadImgRight() {
+  var totalClicks = bag.timesClicked + banana.timesClicked + bathroom.timesClicked + boots.timesClicked + breakfast.timesClicked + bubblegum.timesClicked + chair.timesClicked + cthulhu.timesClicked + dogDuck.timesClicked + dragon.timesClicked + pen.timesClicked + petSweep.timesClicked + scissors.timesClicked + shark.timesClicked + sweep.timesClicked + tauntaun.timesClicked + unicorn.timesClicked + usb.timesClicked + waterCan.timesClicked + wineGlass.timesClicked - 2;
   var leftIndex = randNum();
   console.log('start');
   var leftProduct = choicesMade[leftIndex];
@@ -191,10 +195,9 @@ function uploadImgRight() {
   }
   console.log('timesClicked ' + leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked);
 
-  while (leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked === 5) {
-    console.log('test');
-    // var text = document.getElementById('totals').textContent;
-    // document.getElementById('totals').textContent = 'This is some text'
+  var clickStop = sum(leftProduct.timesClicked.valueOf(), rightProduct.timesClicked.valueOf(), centerProduct.timesClicked.valueOf());
+  while (totalClicks === 5) {
+    console.log('worked');
     break;
   }
 };
