@@ -50,6 +50,8 @@ function randNum() {
 };
 
 function uploadImgLeft() {
+  var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
+  console.log(totalClicksEach);
   var totalClicks = bag.timesClicked + banana.timesClicked + bathroom.timesClicked + boots.timesClicked + breakfast.timesClicked + bubblegum.timesClicked + chair.timesClicked + cthulhu.timesClicked + dogDuck.timesClicked + dragon.timesClicked + pen.timesClicked + petSweep.timesClicked + scissors.timesClicked + shark.timesClicked + sweep.timesClicked + tauntaun.timesClicked + unicorn.timesClicked + usb.timesClicked + waterCan.timesClicked + wineGlass.timesClicked - 2;
   console.log('TC: ' + totalClicks);
   console.log('TC: ' + totalClicks);
@@ -96,15 +98,24 @@ function uploadImgLeft() {
   console.log('timesClicked ' + leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked);
 
   var clickStop = sum(leftProduct.timesClicked.valueOf(), rightProduct.timesClicked.valueOf(), centerProduct.timesClicked.valueOf());
-  while (totalClicks === 5) {
+  while (totalClicks === 25) {
     console.log('test');
+    var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
+    console.log(totalClicksEach);
+    console.log('worked');
+    for (var i = 0; i < choicesMade.length; i++){
+      var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
+      var listSec = document.getElementById('final-list');
+      var list = document.createElement('li');
+      list.textContent = totalClicksEach;
+      listSec.appendChild(list);
+    }
     break;
-    // var text = document.getElementById('totals').textContent;
-    // document.getElementById('totals').textContent = 'This is some text'
   }
 };
 
 function uploadImgCenter() {
+  var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
   var totalClicks = bag.timesClicked + banana.timesClicked + bathroom.timesClicked + boots.timesClicked + breakfast.timesClicked + bubblegum.timesClicked + chair.timesClicked + cthulhu.timesClicked + dogDuck.timesClicked + dragon.timesClicked + pen.timesClicked + petSweep.timesClicked + scissors.timesClicked + shark.timesClicked + sweep.timesClicked + tauntaun.timesClicked + unicorn.timesClicked + usb.timesClicked + waterCan.timesClicked + wineGlass.timesClicked - 2;
   var leftIndex = randNum();
   console.log('start');
@@ -146,12 +157,23 @@ function uploadImgCenter() {
   }
   console.log('timesClicked ' + leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked);
   var clickStop = sum(leftProduct.timesClicked.valueOf(), rightProduct.timesClicked.valueOf(), centerProduct.timesClicked.valueOf());
-  while (totalClicks === 5) {
-    console.log('test');
+  while (totalClicks === 25) {
+    console.log(totalClicksEach);
+    console.log('worked');
+    var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
+    for (var i = 0; i < choicesMade.length; i++){
+      var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
+      var listSec = document.getElementById('final-list');
+      var list = document.createElement('li');
+      list.textContent = totalClicksEach;
+      listSec.appendChild(list);
+    }
     break;
-  };
+  }
 };
+
 function uploadImgRight() {
+  var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
   var totalClicks = bag.timesClicked + banana.timesClicked + bathroom.timesClicked + boots.timesClicked + breakfast.timesClicked + bubblegum.timesClicked + chair.timesClicked + cthulhu.timesClicked + dogDuck.timesClicked + dragon.timesClicked + pen.timesClicked + petSweep.timesClicked + scissors.timesClicked + shark.timesClicked + sweep.timesClicked + tauntaun.timesClicked + unicorn.timesClicked + usb.timesClicked + waterCan.timesClicked + wineGlass.timesClicked - 2;
   var leftIndex = randNum();
   console.log('start');
@@ -194,13 +216,22 @@ function uploadImgRight() {
     console.log('leftindex' + leftIndex);
   }
   console.log('timesClicked ' + leftProduct.timesClicked + rightProduct.timesClicked + centerProduct.timesClicked);
-
   var clickStop = sum(leftProduct.timesClicked.valueOf(), rightProduct.timesClicked.valueOf(), centerProduct.timesClicked.valueOf());
-  while (totalClicks === 5) {
+  while (totalClicks === 25) {
+    var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
+    console.log(totalClicksEach);
     console.log('worked');
+    for (var i = 0; i < choicesMade.length; i++){
+      var totalClicksEach = [bag.timesClicked, banana.timesClicked, bathroom.timesClicked, boots.timesClicked, breakfast.timesClicked , bubblegum.timesClicked , chair.timesClicked , cthulhu.timesClicked , dogDuck.timesClicked , dragon.timesClicked , pen.timesClicked , petSweep.timesClicked , scissors.timesClicked , shark.timesClicked, sweep.timesClicked, tauntaun.timesClicked, unicorn.timesClicked , usb.timesClicked , waterCan.timesClicked, wineGlass.timesClicked];
+      var listSec = document.getElementById('final-list');
+      var list = document.createElement('li');
+      list.textContent = totalClicksEach;
+      listSec.appendChild(list);
+    }
     break;
-  }
-};
+  };
+}
+
 uploadImgLeft();
 uploadImgRight();
 uploadImgCenter();
